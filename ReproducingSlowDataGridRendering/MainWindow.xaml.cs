@@ -26,7 +26,7 @@ namespace ReproducingSlowDataGridRendering
         {
             InitializeComponent();
 
-            pageHolderFrame.Content = new DataGridUserControl();
+            pageHolderFrame.Content = new DataGridPage();
         }
     }
 }

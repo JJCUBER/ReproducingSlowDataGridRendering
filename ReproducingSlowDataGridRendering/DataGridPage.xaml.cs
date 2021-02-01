@@ -18,14 +18,14 @@ using System.Windows.Shapes;
 namespace ReproducingSlowDataGridRendering
 {
     /// <summary>
-    /// Interaction logic for DataGridUserControl.xaml
+    /// Interaction logic for DataGridPage.xaml
     /// </summary>
-    public partial class DataGridUserControl : UserControl
+    public partial class DataGridPage : Page
     {
         private ObservableCollection<ExampleTableRow> data = new();
         private ICollectionView view;
 
-        public DataGridUserControl()
+        public DataGridPage()
         {
             InitializeComponent();
 
