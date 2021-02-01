@@ -1,0 +1,7 @@
+*.*
+!*.cs
+!*.xaml
+!*.xaml.cs
+!.gitignore
+!.gitattributes
+!README.md
