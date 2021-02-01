@@ -76,21 +76,21 @@ namespace ReproducingSlowDataGridRendering
                 }
 
                 dataGrid.Columns.Add(col);
-
-
-                for(int i = 1; i <= 200; i++)
-                    data.Add(new ExampleTableRow(){Id = i, DateCreated = DateTime.Now, Name = $"Num: {i * 4 % 7}", DateModified = DateTime.Today, Toggle = true});
-
-                view = CollectionViewSource.GetDefaultView(data);
-                view.Filter += (o) =>
-                {
-                    ExampleTableRow row = (ExampleTableRow) o;
-                    return row.Id.ToString().Contains(filterTextBox.Text);
-                };
-
-                dataGrid.ItemsSource = view;
             }
 
+
+            // for(int i = 1; i <= 200; i++)
+            for(int i = 1; i <= 20000; i++)
+                data.Add(new ExampleTableRow(){Id = i, DateCreated = DateTime.Now, Name = $"Num: {i * 4 % 7}", DateModified = DateTime.Today, Toggle = true});
+
+            view = CollectionViewSource.GetDefaultView(data);
+            view.Filter += (o) =>
+            {
+                ExampleTableRow row = (ExampleTableRow) o;
+                return row.Id.ToString().Contains(filterTextBox.Text);
+            };
+
+            dataGrid.ItemsSource = view;
         }
     }
 }
